@@ -28,13 +28,21 @@
       font-size: 1.25rem;
       margin-top: 0.5rem;
     }
-    .feature-image {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    .image-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
       margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .side-image {
+      width: 80px;
+      height: auto;
+      opacity: 0.7;
+    }
+    .main-logo {
       width: 200px;
-      max-width: 80%;
       height: auto;
     }
     .container {
@@ -89,8 +97,14 @@
     <p>Your all-in-one data cleaner and insight generator</p>
   </header>
 
-  <!-- Eugene Image Centered + Sized -->
-  <img class="feature-image" src="images/Eug.png" alt="Eugene">
+  <!-- Eugene Logo with 4 Additional Image Placeholders -->
+  <div class="image-row">
+    <img src="https://via.placeholder.com/80" alt="Left Placeholder 1" class="side-image">
+    <img src="https://via.placeholder.com/80" alt="Left Placeholder 2" class="side-image">
+    <img src="images/Eug.png" alt="Eugene" class="main-logo">
+    <img src="https://via.placeholder.com/80" alt="Right Placeholder 1" class="side-image">
+    <img src="https://via.placeholder.com/80" alt="Right Placeholder 2" class="side-image">
+  </div>
 
   <div class="container">
     <h2>📊 What This Tool Does</h2>
@@ -112,9 +126,34 @@
     © 2025 Smart Data Insights - Eugene | Made by GSCM Team 8
   </footer>
 
-    <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Me8sJTa54F0FeQKB10G0g";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+  <script>
+    (function(){
+      if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...arguments)=>{
+          if(!window.chatbase.q){window.chatbase.q=[]}
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop){
+            if(prop === "q"){return target.q}
+            return (...args) => target(prop, ...args)
+          }
+        });
+      }
+      const onLoad = function(){
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "Me8sJTa54F0FeQKB10G0g";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if(document.readyState === "complete"){
+        onLoad()
+      } else {
+        window.addEventListener("load", onLoad)
+      }
+    })();
+  </script>
 </body>
 </html>
 
